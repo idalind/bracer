@@ -1826,6 +1826,9 @@ def run_IgBlast(igblast, loci, output_dir, cell_name, index_location,
         igblast_species = species
         if species in species_mapper.keys():
             igblast_species = species_mapper[species]
+        else:
+            # Set species to a species name recognised by IgBlast
+            igblast_species = 'mouse'
     initial_locus_names = ["_".join([receptor,x]) for x in loci]
     locus_names = copy.copy(initial_locus_names)
 
@@ -1911,6 +1914,9 @@ def run_IgBlast_IMGT_gaps_for_cell(igblast, loci, output_dir, cell_name,
         igblast_species = species
         if species in species_mapper.keys():
             igblast_species = species_mapper[species]
+        else:
+            # Set igblast species to a species recognised by igblast
+            igblast_species = 'mouse'
 
     initial_locus_names = ["_".join([receptor,x]) for x in loci]
     locus_names = copy.copy(initial_locus_names)
